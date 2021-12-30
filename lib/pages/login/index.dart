@@ -224,6 +224,11 @@ class _LoginPageState extends State<LoginPage> {
       ),
       child: TextButton(
         onPressed: () {},
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(44)),
+          ),
+        ),
         child: Icon(
           icon,
           color: Theme.of(context).primaryColor,
