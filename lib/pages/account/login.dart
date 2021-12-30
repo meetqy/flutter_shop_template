@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           child: Icon(
                             Icons.shopping_bag,
-                            color: Theme.of(context).selectedRowColor,
+                            color: Theme.of(context).backgroundColor,
                           ),
                         ),
                       ],
