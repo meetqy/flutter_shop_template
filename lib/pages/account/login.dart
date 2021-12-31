@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_shop_template/pages/account/common.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _LoginState createState() => _LoginState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginState extends State<Login> {
   bool isPhoneLogin = false;
 
   @override
@@ -69,31 +69,14 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/account/register');
+                          },
                           child: const Text('注册新用户'),
                         )
                       ],
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 60),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [Text('或通过以下方式登录')],
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          loginMethod(context, Icons.ac_unit),
-                          loginMethod(context, Icons.baby_changing_station),
-                          loginMethod(context, Icons.cabin),
-                          loginMethod(context, Icons.dangerous),
-                          loginMethod(context, Icons.e_mobiledata),
-                        ],
-                      ),
-                    ),
+                    footerWidget(context),
                   ],
                 ),
                 Row(
@@ -325,7 +308,6 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     Navigator.pushNamed(
                         context, '/account/forget-password/verify');
-                    // Navigator.push(context, '/account/login');
                   },
                   child: Text(
                     '忘记密码？',
@@ -335,30 +317,6 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ],
-    );
-  }
-
-  Widget loginMethod(BuildContext context, IconData icon) {
-    return Container(
-      margin: const EdgeInsets.only(right: 20),
-      width: 44,
-      height: 44,
-      decoration: BoxDecoration(
-        border: Border.all(width: 1, color: Theme.of(context).primaryColor),
-        borderRadius: BorderRadius.circular(22),
-      ),
-      child: TextButton(
-        onPressed: () {},
-        style: ButtonStyle(
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(44)),
-          ),
-        ),
-        child: Icon(
-          icon,
-          color: Theme.of(context).primaryColor,
-        ),
-      ),
     );
   }
 }

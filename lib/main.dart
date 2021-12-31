@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shop_template/pages/account/forget-password/reset.dart';
 import 'package:flutter_shop_template/pages/account/forget-password/verify.dart';
+import 'package:flutter_shop_template/pages/account/register.dart';
 import 'pages/account/login.dart';
 
 void main() {
@@ -57,13 +58,14 @@ class MyApp extends StatelessWidget {
       ),
       themeMode: ThemeMode.system,
       routes: {
-        '/account/login': (context) => const LoginPage(),
+        '/account/login': (context) => const Login(),
+        '/account/register': (context) => const Register(),
         '/account/forget-password/reset': (context) =>
             const ForgetPasswordReset(),
         '/account/forget-password/verify': (context) =>
             const ForgetPasswordVerify(),
       },
-      initialRoute: '/account/login',
+      initialRoute: '/account/register',
     );
   }
 }
