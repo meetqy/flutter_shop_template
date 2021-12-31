@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
             children: [
               Expanded(
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.only(left: 10),
                   height: 28,
                   child: const TextField(
                     textAlignVertical: TextAlignVertical.center,
@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
                       hintText: "搜索你想要的商品",
                       filled: true,
                       fillColor: Colors.white,
-                      prefixIcon: Icon(Icons.phone, size: 18),
+                      prefixIcon: Icon(Icons.search, size: 18),
                       isCollapsed: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(50)),

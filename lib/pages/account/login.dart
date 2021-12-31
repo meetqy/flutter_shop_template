@@ -52,7 +52,9 @@ class _LoginState extends State<Login> {
                         children: [
                           Expanded(
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/home');
+                              },
                               style: ElevatedButton.styleFrom(
                                 minimumSize: const Size(0, 44),
                                 shape: RoundedRectangleBorder(
