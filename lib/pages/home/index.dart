@@ -262,11 +262,55 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                   ),
-                )
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: DefaultTabController(
+                    length: 4,
+                    child: Column(
+                      children: [
+                        TabBar(
+                          // indicator: const UnderlineTabIndicator(
+                          //   borderSide: BorderSide(style: BorderStyle.none),
+                          // ),
+
+                          indicator: BoxDecoration(
+                            color: Colors.indigo,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          labelColor: Colors.white,
+                          unselectedLabelColor: Colors.indigo.shade400,
+                          tabs: [
+                            tabItem(context, "精选", Icons.h_mobiledata),
+                            tabItem(context, "进口", Icons.ice_skating),
+                            tabItem(context, "直播", Icons.format_align_justify),
+                            tabItem(context, "新品", Icons.kayaking),
+                          ],
+                        ),
+                        // TabBarView(
+                        //   children: [],
+                        // )
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Tab tabItem(BuildContext context, String title, IconData icon) {
+    return Tab(
+      height: 44,
+      text: title,
+      iconMargin: EdgeInsets.symmetric(vertical: 2),
+      icon: Icon(
+        icon,
+        size: 16,
       ),
     );
   }
