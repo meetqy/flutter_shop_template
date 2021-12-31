@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shop_template/pages/account/forget-password/reset.dart';
 import 'package:flutter_shop_template/pages/account/forget-password/verify.dart';
 import 'package:flutter_shop_template/pages/account/register.dart';
+import 'package:flutter_shop_template/pages/home/index.dart';
 import 'pages/account/login.dart';
 
 void main() {
@@ -51,6 +52,11 @@ class MyApp extends StatelessWidget {
             fontSize: 14,
             color: Color(0xff333333),
           ),
+          subtitle2: TextStyle(
+            fontSize: 12,
+            color: Color(0xff999999),
+            fontWeight: FontWeight.normal,
+          ),
         ),
       ),
       darkTheme: ThemeData(
@@ -60,12 +66,13 @@ class MyApp extends StatelessWidget {
       routes: {
         '/account/login': (context) => const Login(),
         '/account/register': (context) => const Register(),
+        '/home': (context) => const Home(),
         '/account/forget-password/reset': (context) =>
             const ForgetPasswordReset(),
         '/account/forget-password/verify': (context) =>
             const ForgetPasswordVerify(),
       },
-      initialRoute: '/account/register',
+      initialRoute: '/home',
     );
   }
 }
