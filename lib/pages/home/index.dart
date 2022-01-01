@@ -307,7 +307,7 @@ class _HomeState extends State<Home> {
     return Tab(
       height: 44,
       text: title,
-      iconMargin: EdgeInsets.symmetric(vertical: 2),
+      iconMargin: const EdgeInsets.symmetric(vertical: 2),
       icon: Icon(
         icon,
         size: 16,
